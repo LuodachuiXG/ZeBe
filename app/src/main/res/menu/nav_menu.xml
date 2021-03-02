@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/nav_first_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navHot"
+            android:icon="@drawable/ic_hot"
+            android:title="@string/hot" />
+        <item
+            android:id="@+id/navNewest"
+            android:icon="@drawable/ic_newest"
+            android:title="@string/newest" />
+        <item
+            android:id="@+id/navCampusBelle"
+            android:icon="@drawable/ic_campus_belle"
+            android:title="@string/campus_belle" />
+        <item
+            android:id="@+id/navStar"
+            android:icon="@drawable/ic_star"
+            android:title="@string/star" />
+        <item
+            android:id="@+id/navSenXi"
+            android:icon="@drawable/ic_senxi"
+            android:title="@string/senxi" />
+        <item
+            android:id="@+id/navPure"
+            android:icon="@drawable/ic_pure"
+            android:title="@string/pure" />
+        <item
+            android:id="@+id/navTenderModel"
+            android:icon="@drawable/ic_tender_model"
+            android:title="@string/tender_model" />
+        <item
+            android:id="@+id/navGirl"
+            android:icon="@drawable/ic_girl"
+            android:title="@string/girl" />
+    </group>
+
+    <group
+        android:id="@+id/nav_setting_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navCheckUpdate"
+            android:icon="@drawable/ic_check_update"
+            android:title="@string/checkUpdate" />
+        <item
+            android:id="@+id/navSetting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/setting" />
+    </group>
+</menu>

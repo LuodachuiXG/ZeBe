@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item_work_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/item_work_p_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_alignEnd="@+id/item_work_imageView"
+            android:layout_alignBottom="@+id/item_work_imageView"
+            android:layout_margin="5dp"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:id="@+id/item_work_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_below="@+id/item_work_imageView"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/item_work_id"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="ID:24578"-->
+<!--            android:layout_below="@+id/item_work_textView"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="#f96937"-->
+<!--            android:background="@drawable/bg_id"-->
+<!--            android:paddingLeft="5dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            />-->
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

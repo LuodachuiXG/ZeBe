@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Zebe</string>
+    <string name="home">主页</string>
+    <string name="setting">设置</string>
+
+    <string name="nav_header_title">欢迎使用Zebe</string>
+    <string name="nav_header_tips">Zebe为原宅宝对应4.0重置版</string>
+    <string name="nav_site_one">First</string>
+    <string name="nav_site_two">资源二</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="hot">热门</string>
+    <string name="newest">最新</string>
+    <string name="campus_belle">校花</string>
+    <string name="star">明星</string>
+    <string name="senxi">森系</string>
+    <string name="pure">清纯</string>
+    <string name="tender_model">嫩模</string>
+    <string name="girl">少女</string>
+    <string name="single_column">单列</string>
+    <string name="double_column">双列</string>
+    <string name="loading">加载中...</string>
+    <string name="mgoto">跳转</string>
+    <string name="page_number">请输入页数</string>
+    <string name="checkUpdate">检查更新</string>
+</resources>
