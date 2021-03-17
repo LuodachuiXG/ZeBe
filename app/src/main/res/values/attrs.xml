@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditTextLayout">
+        <attr name="layout_title" format="string" />
+        <attr name="layout_editText_hint" format="string" />
+        <attr name="layout_input_type">
+            <enum name="password" value="0" />
+            <enum name="text" value="1" />
+            <enum name="number" value="2" />
+        </attr>
+        <attr name="layout_editText_text" format="string"/>
+        <attr name="layout_editText_color" format="color" />
+        <attr name="layout_focus" format="boolean"/>
+        <attr name="layout_required" format="boolean"/>
+        <attr name="layout_maxLength" format="integer" min="0"/>
+    </declare-styleable>
+</resources>

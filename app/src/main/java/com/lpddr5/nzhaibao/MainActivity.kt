@@ -6,7 +6,9 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
@@ -16,6 +18,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lpddr5.nzhaibao.databinding.ActivityMainBinding
 import com.lpddr5.nzhaibao.logic.Repository
+import com.lpddr5.nzhaibao.tool.toast
+import com.lpddr5.nzhaibao.ui.home.HomeActivity
+import com.lpddr5.nzhaibao.ui.login.LoginActivity
 import com.lpddr5.nzhaibao.ui.ninefivemm.NineFiveMMFragment
 import com.lpddr5.nzhaibao.ui.ninefivemm.NineFiveMMViewModel
 import com.lpddr5.nzhaibao.ui.setting.SettingFragment
@@ -35,9 +40,13 @@ class MainActivity : AppCompatActivity() {
     // toolbar上menu对象，用于获取menu中的action
     private lateinit var menu: Menu
 
+    // 给 NavigationView 动态添加headerLayout，否则获取不到headerLayout中的view
+    private lateinit var headerLayout: View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        headerLayout = binding.navView.inflateHeaderView(R.layout.nav_header)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
@@ -62,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         drawerToggle.syncState();
 
         // 设置滑动菜单主页默认选中
-        binding.navView.setCheckedItem(R.id.navHot)
+        binding.navView.setCheckedItem(R.id.navNewest)
 
         // 设置欢动菜单选中事件监听器
         binding.navView.setNavigationItemSelectedListener {
@@ -108,13 +117,6 @@ class MainActivity : AppCompatActivity() {
             }
             binding.drawerLayout.closeDrawers()
             true
-        }
-
-        // 给 NavigationView 动态添加headerLayout，否则获取不到headerLayout中的view
-        val headerLayout = binding.navView.inflateHeaderView(R.layout.nav_header)
-        val imageView = headerLayout.findViewById(R.id.navHeaderIconImage) as CircleImageView
-        imageView.setOnClickListener {
-            "你好呀，嘿嘿~~".toast()
         }
 
         // ViewModel中变量观察
@@ -193,6 +195,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setNavHeader()
+    }
+
+    private fun setNavHeader() {
+        val imageView = headerLayout.findViewById(R.id.navHeaderIconImage) as CircleImageView
+        val textView = headerLayout.findViewById(R.id.navHeaderTextView) as TextView
+        imageView.setOnClickListener {
+            // 如果用户已经登录，点击头像前往个人主页，否则前往登录页面
+            if (Repository.getData("isLogin") == "true") {
+                HomeActivity.startActivity(this)
+            } else {
+                LoginActivity.startActivity(this)
+            }
+        }
+        // 将用户name显示navHeader的TextView上
+        val name = Repository.getData("name")
+        if (name.isNotEmpty()) {
+            textView.text = name
+        }
+        // 如果用户已经登录就替换navHeader头像
+        if (Repository.getData("isLogin") == "true") {
+            imageView.setImageResource(R.drawable.ic_islogin)
+        }
     }
 
     private fun replaceFragment(fragment: Fragment){

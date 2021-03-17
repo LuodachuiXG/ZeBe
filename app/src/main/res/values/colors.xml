@@ -5,7 +5,9 @@
     <color name="colorPrimary">#1D1D1D</color>
     <color name="colorPrimaryVariant">#1D1D1D</color>
 
-    <color name="lightColorPrimary">#202020</color>
+    <color name="colorPrimaryToolbar">#2E2E2E</color>
+
+    <color name="lightColorPrimary">#2B2B2B</color>
 
 
     <color name="selected">#F7971C</color>
@@ -14,4 +16,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
+    <color name="editTextBackground">#535353</color>
 </resources>

@@ -42,7 +42,6 @@ class ImageDisplayActivity : AppCompatActivity() {
                 override fun onPhotoTap(view: View?, x: Float, y: Float) {
                     finish()
                 }
-
                 override fun onOutsidePhotoTap() {}
             }
 
@@ -61,7 +60,6 @@ class ImageDisplayActivity : AppCompatActivity() {
                         startActivity(Intent.createChooser(intent, "分享到"))
                     } else if (ZeBeApplication.imageDisplayLongClickList[i] == "保存到相册") {
                         if (ZeBeApplication.applyStoragePermission(that)){
-
                             val f = File(getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path + "/$mImageIndex.jpg")
                             try {
                                 val fos = FileOutputStream(f)

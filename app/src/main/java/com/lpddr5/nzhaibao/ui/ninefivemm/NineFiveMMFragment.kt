@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.lpddr5.nzhaibao.R
 import com.lpddr5.nzhaibao.ZeBeApplication
 import com.lpddr5.nzhaibao.databinding.FragmentNinefivemmBinding
-import com.lpddr5.nzhaibao.toast
+import com.lpddr5.nzhaibao.tool.toast
 import java.util.*
 
 class NineFiveMMFragment() : Fragment() {

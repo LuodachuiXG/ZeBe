@@ -27,6 +27,10 @@
             android:layout_alignBottom="@+id/item_work_imageView"
             android:layout_margin="5dp"
             android:textColor="#fff"
+            android:shadowColor="#ff000000"
+            android:shadowRadius="1"
+            android:shadowDx="0"
+            android:shadowDy="2"
             />
 
         <TextView

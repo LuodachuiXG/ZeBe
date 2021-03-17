@@ -1,34 +1,35 @@
 package com.lpddr5.nzhaibao
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.Application
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.ViewModel
-import com.lpddr5.nzhaibao.logic.Repository
 import com.lpddr5.nzhaibao.ui.ninefivemm.NineFiveMMViewModel
 import com.permissionx.guolindev.PermissionX
-import java.util.jar.Manifest
 
 class ZeBeApplication : Application(){
 
     companion object {
         const val updateInfo =
-            "1.现在白天或夜间都默认显示深色页面。\n\n2.优化部分UI显示。\n\n3.新增检查更新功能。\n\n4.优化浏览图片默认画质。" +
-                    "\n\n5.为下一个版本登录功能做部分准备。"
+            "1.完善登录功能。\n\n2.完善’喜欢功能‘。\n\n3.给显示P的标签新增阴影，防止亮色无法分辨。" +
+                    "\n\n4.新增个人主页并完善’我的喜欢’功能。"
 
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
 
-        var currentCategory = NineFiveMMViewModel.HOT
-
+        // 默认是显示最新图片
+        var currentCategory = NineFiveMMViewModel.NEWEST
 
         lateinit var nineFiveMMViewModel: NineFiveMMViewModel
 
+        // 查看大图页面长按菜单
         val imageDisplayLongClickList = arrayOf("保存到相册", "分享")
+
+        // 不同平台标记
+        const val NINE_FIVE_MM = "95mm"
+        const val ZHAI_NAN_NV_SHEN = "宅男女神"
 
         fun applyStoragePermission(fragmentActivity: FragmentActivity): Boolean {
             var result = false

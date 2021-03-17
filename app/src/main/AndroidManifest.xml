@@ -3,20 +3,25 @@
     package="com.lpddr5.nzhaibao">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".ZeBeApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Zhaibao"
-        android:requestLegacyExternalStorage="true">
+        android:theme="@style/Theme.Zhaibao">
+        <activity android:name=".ui.home.HomeActivity"></activity>
+        <activity android:name=".ui.forgetpassword.ForgetPasswordActivity" />
+        <activity android:name=".ui.signup.SignUpActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
         <activity
             android:name=".ui.imageDisplay.ImageDisplayActivity"
-            android:theme="@style/ImageDisplayTheme"/>
+            android:theme="@style/ImageDisplayTheme" />
         <activity
             android:name=".ui.workDisplay.WorkDisplayActivity"
             android:theme="@style/WorkDisplayTheme" />
@@ -29,17 +34,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <provider
-            android:authorities="com.lpddr5.nzhaibao.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.lpddr5.nzhaibao.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"
-                />
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
 
